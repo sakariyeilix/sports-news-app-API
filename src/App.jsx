@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Layout from './Layout';
-import Football from './pages/kubada cagta';
+import Football from './pages/Football';
 import Handball from './pages/Handball';
 import Tennis from './pages/Tennis';
 
@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/kubada cagta" element={<kubada cagta />} />
+          <Route path="/football" element={<Football />} />
           <Route path="/handball" element={<Handball />} />
           <Route path="/tennis" element={<Tennis />} />
         </Routes>
