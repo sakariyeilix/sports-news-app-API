@@ -21,7 +21,7 @@ function Footar() {
                           <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
                       </li>
                       <li>
-                          <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                          <a href="https://tailwindcss.com/" class="hover:underline">lwind CSSTai</a>
                       </li>
                   </ul>
               </div>
