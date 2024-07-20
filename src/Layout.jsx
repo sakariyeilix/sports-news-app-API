@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 function Layout() {
   const [value, setValue] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const api = async () => {
     try {
-      let response = await fetch("https://newsapi.org/v2/everything?q=sports&apiKey=3fc72927f6dd4a9ab03d007a5894f622");
+      let response = await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=3fc72927f6dd4a9ab03d007a5894f622");
       let result = await response.json();
+      console.log("API response: ", result); // Log the response
       if (result && result.articles) {
         setValue(result.articles);
       } else {
@@ -15,12 +17,18 @@ function Layout() {
     } catch (error) {
       console.error("Error fetching data: ", error);
       setValue([]);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     api();
   }, []);
+
+  if (loading) {
+    return <p>Loading articles...</p>;
+  }
 
   return (
     <div className="grid gap-2 lg:grid-cols-4">
