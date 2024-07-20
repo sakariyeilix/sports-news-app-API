@@ -6,7 +6,11 @@ function Layout() {
 
   const api = async () => {
     try {
-      let response = await fetch("https://newsapi.org/v2/everything?q=Football&apiKey=3fc72927f6dd4a9ab03d007a5894f622");
+      const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+      if (!apiKey) {
+        throw new Error("API key is missing.");
+      }
+      let response = await fetch(`https://newsapi.org/v2/everything?q=sports&apiKey=${apiKey}`);
       let result = await response.json();
       console.log("API response: ", result); // Log the response
       if (result && result.articles) {
