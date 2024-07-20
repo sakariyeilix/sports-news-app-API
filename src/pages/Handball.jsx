@@ -5,7 +5,7 @@ function Layout() {
 
   const api = async () => {
     try {
-      let response = await fetch("https://newsapi.org/v2/everything?q=sports&apiKey=3fc72927f6dd4a9ab03d007a5894f622");
+      let response = await fetch("https://newsapi.org/v2/everything?q=Handball&apiKey=3fc72927f6dd4a9ab03d007a5894f622");
       let result = await response.json();
       if (result && result.articles) {
         setValue(result.articles);
